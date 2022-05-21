@@ -9,7 +9,7 @@ function RoutesComponent() {
             <Routes>
                 <Route exact path="/" element = {<Navigate to="/search" replace={true} />} />
                 <Route exact path='/search' element={<Results />} />
-                <Route exact path="/images" element={<Results />} />
+                <Route exact path="/image" element={<Results />} />
                 <Route exact path="/news" element={<Results />} />
                 <Route exact path="/videos" element={<Results />} />
             </Routes>
