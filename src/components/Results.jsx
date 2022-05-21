@@ -7,7 +7,7 @@ import {useResultContext} from '../contexts/ResultContextProvider'
 import Loading from "./Loading";
 
 function Results() {
-    const {results, getResults, isLoading, searchTerm, setSearchTerm} = useResultContext()
+    const {results, getResults, isLoading, searchTerm} = useResultContext()
     const location = useLocation() //images, news, search
 
     useEffect(() => {
