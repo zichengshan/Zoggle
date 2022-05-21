@@ -1,3 +1,20 @@
+# 💡 Description
+1. Zoogle is a clone of Google Search with a modern UI, light/dark modes, and the ability to search for the latest results, news, images and videos.
+
+2. This project is built by **React.js**, styled by **Tailwind CSS**, and fetched real-time data from **[Google Search API](https://rapidapi.com/apigeek/api/google-search3/)**
+
+# 👨🏻‍💻 Demo
+## Search for the latest results, news, images and videos
+![demo](https://user-images.githubusercontent.com/61951792/169640134-5fd74c4c-5126-4d56-82c8-19853483c1ae.gif)
+
+## Light/dark mode
+![light:darkGIF](https://user-images.githubusercontent.com/61951792/169640492-8fce0679-9168-4df9-a68c-bef3b4f1e214.gif)
+
+# 🔧 Setup
+
+Run ```npm start``` to start the app. This app has been deployed, you can have a try by this following link: https://main.d1erq8felcq1oy.amplifyapp.com/search
+
+-----
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
