@@ -3,12 +3,12 @@ import React, {createContext, useContext, useState} from "react"
 const ResultContext = createContext()
 const baseUrl = "https://google-search3.p.rapidapi.com/api/v1"
 
-export const  ResultContextProvider = ({children}) => {
+export const ResultContextProvider = ({children}) => {
     const [results, setResults] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [searchTerm, setSearchTerm] = useState('JavaScript')
+    const [searchTerm, setSearchTerm] = useState('jesus')
 
-    // /videos /images /search
+    // /video /image /search
     const getResults = async (type) => {
         setIsLoading(true)
 
@@ -16,7 +16,7 @@ export const  ResultContextProvider = ({children}) => {
             method: 'GET',
             headers: {
                 'X-User-Agent': 'desktop',
-                'X-Proxy-Location': 'EU',
+                // 'X-Proxy-Location': 'EU',
                 'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
                 'X-RapidAPI-Key': 'd6e0921898msh79b4953e09cc73cp1ba235jsnaef5f683bb98'
             }
@@ -24,11 +24,11 @@ export const  ResultContextProvider = ({children}) => {
 
         const data = await response.json()
 
-        if(type.includes('/news')){
+        if (type.includes('/news')) {
             setResults(data.entries)
-        }else if(type.includes('/image')){
+        } else if (type.includes('/image')) {
             setResults(data.image_results)
-        }else {
+        } else {
             setResults(data.results)
         }
         setIsLoading(false)

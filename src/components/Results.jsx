@@ -11,15 +11,15 @@ function Results() {
     const location = useLocation() //images, news, search
 
     useEffect(() => {
-        if(searchTerm){
-            if(location.pathname === '/videos'){
+        if (searchTerm) {
+            if (location.pathname === '/video') {
                 getResults(`/search/q=${searchTerm} videos`)
             } else {
                 getResults(`${location.pathname}/q=${searchTerm}&num=40`)
             }
         }
     }, [searchTerm, location.pathname])
-
+    
     if (isLoading) {
         return <Loading/>
     }
@@ -52,8 +52,16 @@ function Results() {
                     ))}
                 </div>
             )
-        case '/videos':
-            return 'SEARCH'
+        case '/video':
+            return (
+                <div className='flex flex-wrap'>
+                    {results.map((video, index) => (
+                        <div key={index} className='p-2'>
+                            <ReactPlayer url={video.additional_links?.[0].href} controls width="355px" height="200px"/>
+                        </div>
+                    ))}
+                </div>
+            )
         case '/news':
             return (
                 <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
@@ -62,7 +70,8 @@ function Results() {
                             <a href={links?.[0].href} target='_blank' rel='noreferrer' className='hover:underline'>
                                 <p className="text-lg dark:text-blue-300 text-blue-700 ">{title}</p>
                                 <div className='flex gap-4'>
-                                    <a href={source?.href} target="_blank" rel="noreferrer" className="hover:underline hover:text-blue-300"> {source?.href}</a>
+                                    <a href={source?.href} target="_blank" rel="noreferrer"
+                                       className="hover:underline hover:text-blue-300"> {source?.href}</a>
                                 </div>
                             </a>
                         </div>
